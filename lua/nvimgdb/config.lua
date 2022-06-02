@@ -32,6 +32,10 @@ local default = {
   jump_bottom_gdb_buf = true,
 }
 
+function C.setup(config)
+  default = vim.tbl_deep_extend('force', default, config)
+end
+
 -- Turn a string into a funcref looking up a Vim function.
 -- @param key string callback name
 -- @param val any parameter value expected to be a function reference
