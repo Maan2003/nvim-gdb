@@ -167,10 +167,10 @@ end
 -- Define the cursor and breakpoint signs
 function C:_define_signs()
   -- Define the sign for current line the debugged program is executing.
-  vim.fn.sign_define('GdbCurrentLine', {text = self.config.sign_current_line})
+  vim.fn.sign_define('GdbCurrentLine', {text = self.config.sign_current_line, texthl = 'GdbCurrentLineSign', linehl = 'GdbCurrentLine'})
   -- Define signs for the breakpoints.
   for i, brk in ipairs(self.config.sign_breakpoint) do
-    vim.fn.sign_define('GdbBreakpoint' .. i, {text = brk})
+    vim.fn.sign_define('GdbBreakpoint' .. i, {text = brk, texthl = 'GdbBreakpointSign'})
   end
 end
 
